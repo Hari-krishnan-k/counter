@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+        </style>
+</head>
+<body class="bg-black py-[100px]">
+    <div class="2x container mx-auto bg-black">
+        <div class= "w-[90%] mx-auto flex flex-col justify-center items-center bg-[black] p-8 gap-7">
+            <div class="bg-[#fcfbf5] p-7 flex flex-col justify-center items-center gap-7 rounded-xl">
+                <div class="">
+                    <h1 class="font-[Monoton] text-red-700">Counter</h1>
+                </div>
+                <div class="">
+                    <p id="para" class="rounded-full w-[100px] h-[100px] text-[30px] font-bold shadow-[0_0_10px_blue] bg-[white] flex justify-center items-center border-2 border-[#1900ff]">0</p>
+                </div>
+                <div class="flex flex-row justify-center items-center gap-6">
+                    <button id="btn1" class="px-7  bg-[#f96e6e] rounded-sm border-2 border-[red]">Decrement</button>
+                    <button id="btn2" class="w-[59px] h-[59px] bg-[#206aff] rounded-full flex justify-center items-center ">Reset</button>
+                    <button id="btn3" class="px-7 bg-[#65fe65] rounded-sm border-2 border-[#00ff26] ">Increment</button>
+                </div>
+            </div> 
+        </div>       
+    </div>
+    
+   
+    
+    
+    <script>
+        // gettermethods
+        const para =document.getElementById("para")
+        const btn1 =document.getElementById("btn1")
+        const btn2 =document.getElementById("btn2")
+        const btn3 =document.getElementById("btn3")
+        // events & properties
+        btn1.addEventListener("click",()=>{
+            console.log("Decrement")
+            console.log(btn1) // doubt y not visible properties
+            para.textContent = parseInt(para.textContent) - 1
+            para.style.color="red"
+            para.style.border="red"
+            para.style.boxShadow = '0 0 10px red';
+            console.log(para)
+        })
+        btn2.addEventListener("click",()=>{
+            console.log("Reset")
+            para.textContent = 0
+            para.style.color="blue"
+            para.style.border="#117611"
+            para.style.boxShadow = '0 0 10px blue';
+
+        })
+        btn3.addEventListener("click",()=>{
+            console.log("Increment")
+            
+            para.textContent = parseInt(para.textContent) + 1
+            para.style.color="green"
+            para.style.border="#117611"
+            para.style.boxShadow = '0 0 10px #65fe65';
+        })
+    </script>
+    
+</body>
+</html>
